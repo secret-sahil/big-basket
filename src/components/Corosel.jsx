@@ -1,6 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 export default function Corosel() {
+    const [getCorsol, SetCorsol] = useState(1)
+    console.log(getCorsol);
+    setInterval(() => {
+        if (getCorsol <= 5) {
+            SetCorsol(getCorsol+1)
+        } else if (getCorsol==5) {
+            SetCorsol(1)   
+        }
+    }, 6000);
+
 	return (
 		<div>
 			<div
@@ -12,7 +22,7 @@ export default function Corosel() {
 				<div className="relative h-56 overflow-hidden rounded-lg md:h-96">
 					{/* Item 1 */}
 					<div
-						className="duration-700 ease-in-out"
+						className={getCorsol==1?"duration-700 ease-in-out": "hidden duration-700 ease-in-out"}
 						data-carousel-item
 					>
 						<img
@@ -23,7 +33,7 @@ export default function Corosel() {
 					</div>
 					{/* Item 2 */}
 					<div
-						className="hidden duration-700 ease-in-out"
+						className={getCorsol==2?"duration-700 ease-in-out": "hidden duration-700 ease-in-out"}
 						data-carousel-item
 					>
 						<img
@@ -34,7 +44,7 @@ export default function Corosel() {
 					</div>
 					{/* Item 3 */}
 					<div
-						className="hidden duration-700 ease-in-out"
+						className={getCorsol==3?"duration-700 ease-in-out": "hidden duration-700 ease-in-out"}
 						data-carousel-item
 					>
 						<img
@@ -45,7 +55,7 @@ export default function Corosel() {
 					</div>
 					{/* Item 4 */}
 					<div
-						className="hidden duration-700 ease-in-out"
+						className={getCorsol==4?"duration-700 ease-in-out": "hidden duration-700 ease-in-out"}
 						data-carousel-item
 					>
 						<img
@@ -56,7 +66,7 @@ export default function Corosel() {
 					</div>
 					{/* Item 5 */}
 					<div
-						className="hidden duration-700 ease-in-out"
+						className={getCorsol==5?"duration-700 ease-in-out": "hidden duration-700 ease-in-out"}
 						data-carousel-item
 					>
 						<img
